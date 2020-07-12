@@ -77,16 +77,16 @@ Vamos utilizar o flavor _Pie (API 28 - Google Play)_.
 ### Git Clone, Instalação das Libs e Execução dos testes
 
 Crie uma pasta com o nome e no diretório que quiser (para clonar o repositório).\
-Clone o repositório do [Desafio 2 - Appium](!!!) e entre na pasta clonada.
+Clone o repositório do [Desafio 2 - Appium](https://gitlab.com/Coutinho_W/desafio-smartbank_appium.git) e entre na pasta clonada.
 
 Instale o ``pipenv`` com o comando: ``pip install pipenv``\
-Instale as dependências pelo ``Pipfile``, que está no diretório raiz, com o comando: ``pipenv install``\
-Aguarde as dependências serem instaladas. Após o processo use o comando: ``pipenv shell`` para rodar uma VirtualEnv.
+Instale as dependências pelo ``Pipfile`` (que está no diretório raiz) com o comando: ``pipenv install``\
+Aguarde as dependências serem instaladas. Após o processo use o comando: ``pipenv shell`` para rodar uma _VirtualEnv_.
 
-Baixe o arquivo apk ([aqui](https://bit.ly/2YTkkIV)) que vamos utilizar nos testes e salve dentro do diretório ``app`` da pasta clonada anteriormente.\
-Agora vamos iniciar o emulador. Abra o Android Studio > AVD Manager e inicie o emulador criado nos passos anteriores.\
-Após o mesmo ser lançado, abra o terminal (Powershell p/ Windows || bash p/ Linux) e insira o comando ``adb devices``\
-Se o emulador tiver sido corretamente configurado, este comando deve retornar o número do device disponível (ex. ``emulator-0123``). 
+Baixe o arquivo _apk_ ([aqui](https://bit.ly/2YTkkIV)) que vamos utilizar nos testes e salve dentro do diretório ``app`` da pasta clonada anteriormente.\
+Agora vamos iniciar o emulador. Vá em ``Android Studio > AVD Manager`` e inicie o emulador criado nos passos anteriores.\
+Após o mesmo ser lançado, abra um terminal (Powershell p/ Windows || bash p/ Linux) e insira o comando ``adb devices``\
+Se o emulador estiver rodando e configurado corretamente, então este comando deve retornar o _número do device_ disponível (ex. ``emulator-0123``). 
 
 Com essas informações, vamos atualizar o arquivo ``environment.py`` para que os testes possam rodar corretamente.\
 Acesse na pasta clonada ``features > environment.py`` e em ``desired_capabilities`` altere os respectivos campos abaixo com os seus dados:
@@ -97,6 +97,9 @@ Acesse na pasta clonada ``features > environment.py`` e em ``desired_capabilitie
 } 
 ````
 
+Com o *emulador rodando* e o arquivo ``environment.py`` configurado, já podemos rodar os testes.\
+Abra o _Appium Server - Desktop_ e inicie o servidor com os dados de ``host`` e ``port`` padrão.
+ 
 Para rodar os testes vamos usar o comando abaixo. 
 Os parâmetros deste comando são:\
 ``--lang=pt``: língua utilizada nos arquivos ``.feature``\
@@ -119,7 +122,7 @@ Pronto, relatório dos testes mobile disponíveis no browser.
 ##
 #### Repositório
 
-GitLab: [Desafio 2 - Appium (Smartbank)](!!!!) 
+GitLab: [Desafio 2 - Appium (Smartbank)](https://gitlab.com/Coutinho_W/desafio-smartbank_appium) 
 
 ##
 #### Libs utilizadas
