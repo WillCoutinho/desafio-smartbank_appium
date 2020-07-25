@@ -48,23 +48,50 @@ Instale o **Python pip**: ``sudo apt install python3-pip``
 
 Instale o **GIT**: ``sudo apt install git``
 
-Baixe o [**Appium Server - Desktop**](http://appium.io/downloads.html) e crie um executável do arquivo (``Propriedades -> Permissões -> Criar executável``)
+Baixe o [**Appium Server - Desktop**](http://appium.io/downloads.html) extensão _AppImage_ e dê as permissões necessárias:
+````bash
+sudo chmod u+x Appium.AppImage
+````
 
 Baixe o framework de report [**Allure (2.13.5)**](https://github.com/allure-framework/allure2/releases) e descompacte na pasta que desejar.\
 Abra o terminal e insira o caminho da pasta ``bin`` do _Allure Framework_ no ``PATH`` environment: 
 ````bash 
-export PATH=/Caminho_Allure/bin:$PATH
-source ~/.bashrc
+sudo nano /etc/environment
+>> PATH="[...]:/Allure_Path/bin"
+>> CTRL+X > Yes > Enter 
+source /etc/environment
 ````
 
-Instale o [**Java JDK**](https://www.java.com/pt_BR/download/) e crie as variáveis de ambiente ``JAVA_HOME`` e como valor o caminho onde Java está instalado.\
+Instale o [**Java JDK Oracle**](https://www.java.com/pt_BR/download/) e crie as variáveis de ambiente ``JAVA_HOME`` e como valor o caminho onde Java está instalado.\
 Insira também a pasta ``\bin`` no Path environment.
-> _**Nota**_: Em caso de dúvidas utilize o [guia da Oracle](https://www.java.com/pt_BR/download/help/path.xml)  
+> _**Nota**_: Em caso de dúvidas para instalar o Java da Oracle utilize o [guia da Oracle](https://www.java.com/pt_BR/download/help/path.xml)  
+>
+>> Podemos utilizar também o **OpenJDK** e **OpenJRE** que é mais simples de instalar, e que supre o Java da Oracle:
+>>````bash
+>>- sudo apt install default-jre
+>>- sudo apt install default-jdk
+>>````
+>> Feito isso, basta incluir nas variáveis de ambiente a pasta ``\bin`` no ``PATH`` e a variável ``JAVA_HOME``
+>>````bash 
+>> sudo nano /etc/environment
+>> >> PATH="[...]:$JAVA_HOME/bin"
+>> >> JAVA_HOME="/JDK_Path/"
+>> >> CTRL+X > Yes > Enter 
+>> source /etc/environment
+>> ````
 
 Deste ponto já será possível checar a versão do _Allure_ (``allure --version``) ou Java (``java --version``) para confirmar se o ``PATH`` foi configurado corretamente.
 
-Instale o [**Android Studio**](https://developer.android.com/studio?hl=pt-br) e configure a variável de ambiente ``ANDROID_HOME`` \
-e suas pastas internas como ``tools``, ``platform-tools`` e ``build-tools``.
+Instale o [**Android Studio**](https://developer.android.com/studio?hl=pt-br) ou use o _Snap_ para instalá-lo: ``sudo snap install android-studio`` 
+Instale também as libs para arquitetura 32 bits: ``sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386`` \
+E configure a variável de ambiente ``ANDROID_HOME`` e suas pastas internas como ``build-tools``, ``emulator``, ``platforms``, ``platform-tools`` e ``tools``.
+````bash
+sudo nano /etc/environment
+>> PATH="[...]:$ANDROID_HOME/build-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+>> ANDROID_HOME="/Android_Sdk_path/"
+>> CTRL+X > Yes > Enter 
+source /etc/environment
+````
 > _**Nota**_: Em caso de dúvidas utilize o [guia de instalação](https://developer.android.com/studio/install?hl=pt-br#linux)
 
 Após a instalação do _Android Studio_, crie um emulador e configure-o no ``AVD Manager``.
@@ -79,9 +106,9 @@ Vamos utilizar o flavor _Pie (API 28 - Google Play)_.
 Crie uma pasta com o nome e no diretório que quiser (para clonar o repositório).\
 Clone o repositório do [Desafio 2 - Appium](https://gitlab.com/Coutinho_W/desafio-smartbank_appium.git) e entre na pasta clonada.
 
-Instale o ``pipenv`` com o comando: ``pip install pipenv``\
-Instale as dependências pelo ``Pipfile`` (que está no diretório raiz) com o comando: ``pipenv install``\
-Aguarde as dependências serem instaladas. Após o processo use o comando: ``pipenv shell`` para rodar uma _VirtualEnv_.
+Instale o ``pipenv`` com o comando: ``sudo pip3 install pipenv``\
+Instale as dependências pelo ``Pipfile`` (que está no diretório raiz) com o comando: ``sudo pipenv install``\
+Aguarde as dependências serem instaladas. Após o processo use o comando: ``sudo pipenv shell`` para rodar uma _VirtualEnv_.
 
 Baixe o arquivo _apk_ ([aqui](https://bit.ly/2YTkkIV)) que vamos utilizar nos testes e salve dentro do diretório ``app`` da pasta clonada anteriormente.\
 Agora vamos iniciar o emulador. Vá em ``Android Studio > AVD Manager`` e inicie o emulador criado nos passos anteriores.\
@@ -92,7 +119,7 @@ Com essas informações, vamos atualizar o arquivo ``environment.py`` para que o
 Acesse na pasta clonada ``features > environment.py`` e em ``desired_capabilities`` altere os respectivos campos abaixo com os seus dados:
 ````json
 {
-	 "deviceName": "insira_emulador_adb_services",
+	 "deviceName": "número_emulador_adb_services",
 	 "app": "absolute_path_onde_apk_está_salvo" 
 } 
 ````
