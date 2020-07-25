@@ -8,7 +8,7 @@ def before_scenario(context, cenario):
                                                             "deviceName": "emulator-5554",
                                                             "appPackage": "com.example.vamsi.login",
                                                             "appActivity": "com.example.vamsi.login.MainActivity",
-                                                            "app": r"C:\Users\William\Desktop\Desafio_2 - Appium\app\app-debug.apk",
+                                                            "app": "/home/coutinho/Desktop/DEV/desafio-smartbank_appium/app/app-debug.apk",
                                                             "noReset": "true"
                                                             })
     
