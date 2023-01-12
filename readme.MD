@@ -3,7 +3,7 @@ Passo a passo para instalar, configurar e rodar os testes do Appium.\
 Cenários feitos para o apk disponível em: https://bit.ly/2YTkkIV
 
 ##
-### Pré Requisitos - Windows 10
+### Pré Requisitos para Windows 10
 
 Instale a versão 3.8.3 (executable) do [**Python**](https://www.python.org/downloads/release/python-383/)
 >**_Nota_**: Antes de instalar, selecione a opção 'Add Python 3.8 to PATH'
@@ -41,7 +41,7 @@ Vamos utilizar o flavor _Pie (API 28 - Google Play)_.
 *Reinicie a máquina para que as alterações nas variáveis de ambiente sejam realizadas.*
 
 ##
-### Pré Requisitos - Linux (Ubuntu)
+### Pré Requisitos para Linux (Ubuntu)
 Instale a versão 3.8.3 do **Python**: ``sudo apt-get install python3.8``
 
 Instale o **Python pip**: ``sudo apt install python3-pip``
