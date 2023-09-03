@@ -104,7 +104,7 @@ Vamos utilizar o flavor _Pie (API 28 - Google Play)_.
 ### Git Clone, Instalação das Libs e Execução dos testes
 
 Crie uma pasta com o nome e no diretório que quiser (para clonar o repositório).\
-Clone o repositório do [Desafio 2 - Appium](https://gitlab.com/Coutinho_W/desafio-smartbank_appium.git) e entre na pasta clonada.
+Clone o repositório do [Desafio 2 - Appium](https://github.com/WillCoutinho/desafio-smartbank_appium.git) e entre na pasta clonada.
 
 Instale o ``pipenv`` com o comando: ``sudo pip3 install pipenv``\
 Instale as dependências pelo ``Pipfile`` (que está no diretório raiz) com o comando: ``sudo pipenv install``\
@@ -149,7 +149,7 @@ Pronto, relatório dos testes mobile disponíveis no browser.
 ##
 #### Repositório
 
-GitLab: [Desafio 2 - Appium (Smartbank)](https://gitlab.com/Coutinho_W/desafio-smartbank_appium) 
+GitHub: [Desafio 2 - Appium (Smartbank)](https://github.com/WillCoutinho/desafio-smartbank_appium) 
 
 ##
 #### Libs utilizadas
